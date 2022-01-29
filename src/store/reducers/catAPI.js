@@ -1,4 +1,4 @@
-import { CateActionTypes } from '../../types/user'
+import { CateActionTypes } from '../types/actionTypes'
 
 const initialState = {
   cats: [],
