@@ -16,7 +16,7 @@ const Categories = ({ categories = [] }) => {
   }, [])
 
   return (
-    <div className="data_box">
+    <div>
       {renderCategories('random')}
       {categories.map((item, index) => renderCategories(item.name, index))}
     </div>

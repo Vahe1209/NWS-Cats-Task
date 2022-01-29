@@ -40,14 +40,20 @@ const Home = () => {
   return (
     <>
       {loading ? (
-        <div className="loading">...loading</div>
+        <div className="loading">Loading...</div>
       ) : (
         <>
           <Categories categories={categories} />
           <div>
             {catsPhotos}
             <div className="button_container" style={{}}>
-              <button type="button" className="button_see_more" onClick={() => seeMore()}>
+              <button
+                type="button"
+                className="button_see_more"
+                onClick={() => {
+                  seeMore()
+                }}
+              >
                 see more
               </button>
             </div>
