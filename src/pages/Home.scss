@@ -1,0 +1,22 @@
+$blackColor: #000000;
+
+.loading {
+  font-size: 130%;
+  margin-top: 15%;
+}
+
+.button_see_more {
+  background-color: $blackColor;
+  cursor: pointer;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.button_container {
+  display: flex;
+  justify-content: center;
+}

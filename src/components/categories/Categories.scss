@@ -1,0 +1,52 @@
+$blackColor: #000000;
+
+.taskByData {
+  display: flex;
+  width: 270px;
+  margin: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.tab {
+  width: 100%;
+  color: white;
+  overflow: hidden;
+  &-label {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+    background: $blackColor;
+    font-weight: bold;
+    cursor: pointer;
+    &:hover {
+      background: darken($blackColor, 10%);
+    }
+  }
+  &-content {
+    max-height: 0;
+    padding: 0 1em;
+    color: $blackColor;
+    background: white;
+    transition: all 0.35s;
+  }
+  &-close {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1em;
+    font-size: 0.75em;
+    background: $blackColor;
+    cursor: pointer;
+    &:hover {
+      background: darken($blackColor, 10%);
+    }
+  }
+}
+
+// :checked
+input:checked {
+  + .tab-label {
+    background: darken($blackColor, 10%);
+  }
+}

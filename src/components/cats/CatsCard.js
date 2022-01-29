@@ -1,4 +1,5 @@
 import React from 'react'
+import './Cats.scss'
 
 const CatsCard = ({ cat }) => {
   return (

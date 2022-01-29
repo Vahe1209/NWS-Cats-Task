@@ -28,7 +28,6 @@ module.exports = {
     'import/no-named-as-default-member': 0,
     'import/no-unresolved': 0,
     'react/jsx-props-no-spreading': 0,
-    'no-unused-expressions': 0,
     'consistent-return': 0,
     'jsx-a11y/click-events-have-key-events': 0,
     'jsx-a11y/no-static-element-interactions': 0,

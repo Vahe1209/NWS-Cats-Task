@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom'
 import { useActions } from '../hooks/useActions'
 import Categories from '../components/categories/Categories'
 import CatsBlok from '../components/cats/CatsBlok'
+import './Home.scss'
 
 const Home = () => {
   const [loading, setLoading] = useState(true)
@@ -39,13 +40,13 @@ const Home = () => {
   return (
     <>
       {loading ? (
-        <div style={{ fontSize: '130%', marginTop: '15%' }}>...loading</div>
+        <div className="loading">...loading</div>
       ) : (
         <>
           <Categories categories={categories} />
           <div>
             {catsPhotos}
-            <div style={{ display: 'flex', justifyContent: 'center' }}>
+            <div className="button_container" style={{}}>
               <button type="button" className="button_see_more" onClick={() => seeMore()}>
                 see more
               </button>

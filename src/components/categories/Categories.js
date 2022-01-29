@@ -1,26 +1,24 @@
-import React from 'react'
+import React, { useCallback } from 'react'
 import { NavLink } from 'react-router-dom'
+import './Categories.scss'
 
-const Categories = ({ categories }) => {
-  return (
-    <div className="data_box">
-      <NavLink to="/home" className="taskByData">
+const Categories = ({ categories = [] }) => {
+  const renderCategories = useCallback((name, key = '') => {
+    return (
+      <NavLink to="/home" className="taskByData" key={key}>
         <div className="tab">
-          {/* eslint-disable-next-line */}
           <label className="tab-label" htmlFor="rd1">
-            random
+            {name}
           </label>
         </div>
       </NavLink>
-      {categories.map((item) => (
-        <NavLink to={`/home/category/${item.id}`} key={item.id} className="taskByData">
-          <div className="tab">
-            <label className="tab-label" htmlFor="rd1">
-              {item.name}
-            </label>
-          </div>
-        </NavLink>
-      ))}
+    )
+  }, [])
+
+  return (
+    <div className="data_box">
+      {renderCategories('random')}
+      {categories.map((item, index) => renderCategories(item.name, index))}
     </div>
   )
 }

@@ -1,5 +1,6 @@
 import React from 'react'
 import CatsCard from './CatsCard'
+import './Cats.scss'
 
 const CatsBlok = ({ cats = [] }) => {
   return (
