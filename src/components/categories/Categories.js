@@ -1,26 +1,29 @@
 import React, { useCallback } from 'react'
-import { NavLink } from 'react-router-dom'
+import { useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
 import { CATEGORY_ROUTE, HOME_PAGE_ROUTE } from '../../constants/routes'
 import './Categories.scss'
 
-const Categories = ({ categories = [] }) => {
+const Categories = () => {
+  const { categories } = useSelector((state) => state.cat)
+
   const renderCategories = useCallback((name, key = '') => {
     return (
-      <NavLink to={HOME_PAGE_ROUTE} className="taskByData" key={key}>
+      <Link to={HOME_PAGE_ROUTE} className="taskByData" key={key}>
         <div className="tab">
           <label className="tab-label" htmlFor="rd1">
             {name}
           </label>
         </div>
-      </NavLink>
+      </Link>
     )
   }, [])
 
   return (
-    <div>
+    <div className="categories-container">
       {renderCategories('random')}
       {categories.map((item) => (
-        <NavLink
+        <Link
           to={`${HOME_PAGE_ROUTE}${CATEGORY_ROUTE}/${item.id}`}
           key={item.id}
           className="taskByData"
@@ -30,7 +33,7 @@ const Categories = ({ categories = [] }) => {
               {item.name}
             </label>
           </div>
-        </NavLink>
+        </Link>
       ))}
     </div>
   )

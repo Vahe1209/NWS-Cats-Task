@@ -2,7 +2,6 @@ import React, { useEffect, useMemo, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import { useActions } from '../hooks/useActions'
-import Categories from '../components/categories/Categories'
 import CatsBlok from '../components/cats/CatsBlok'
 import './Home.scss'
 
@@ -43,7 +42,6 @@ const Home = () => {
         <div className="loading">Loading...</div>
       ) : (
         <>
-          <Categories categories={categories} />
           <div>
             {catsPhotos}
             <div className="button_container" style={{}}>
